@@ -1,5 +1,17 @@
 # XXTEA for .NET
 
+## ℹ️ DisplayNote Specifics
+
+- Build `Relase|x86` configuration.
+- `cp ./Example/Example/bin/Release/Example.exe XXTEA.exe`
+
+Then, use and distribute this `XXTEA` binary as desired. For example
+
+    $ mono XXTEA.exe 'Test/string' 'Please enter here your installer code'
+    nkNP2Z647eckWaQFqhYCOg==
+
+---
+
 <a href="https://github.com/xxtea/">
     <img src="https://avatars1.githubusercontent.com/u/6683159?v=3&s=86" alt="XXTEA logo" title="XXTEA" align="right" />
 </a>

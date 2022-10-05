@@ -2,9 +2,12 @@
 using System.Diagnostics;
 using Xxtea;
 
-namespace Example {
-    class MainClass {
-        public static void Main (string[] args) {
+namespace Example
+{
+    class MainClass
+    {
+        public static void Main(string[] args)
+        {
             String str = "Hello World! 你好，中国！";
             String key = "1234567890";
             String encrypt_data = XXTEA.EncryptToBase64String(str, key);

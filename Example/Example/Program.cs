@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using Xxtea;
 
 namespace Example
@@ -8,13 +9,16 @@ namespace Example
     {
         public static void Main(string[] args)
         {
-            String str = "Hello World! 你好，中国！";
-            String key = "1234567890";
+            if (args.Length != 2)
+            {
+                Console.WriteLine($"usage: {Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0])} <text> <key>");
+                Environment.Exit(1);
+                return;
+            }
+            String str = args[0];
+            String key = args[1];
             String encrypt_data = XXTEA.EncryptToBase64String(str, key);
             Console.WriteLine(encrypt_data);
-            Debug.Assert("QncB1C0rHQoZ1eRiPM4dsZtRi9pNrp7sqvX76cFXvrrIHXL6" == encrypt_data);
-            String decrypt_data = XXTEA.DecryptBase64StringToString(encrypt_data, key);
-            Debug.Assert(str == decrypt_data);
         }
     }
 }
